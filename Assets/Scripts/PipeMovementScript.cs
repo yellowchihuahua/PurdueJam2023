@@ -7,8 +7,7 @@ public class PipeMovementScript : MonoBehaviour
     LogicScript logicScript;
 
     private float groundMoveSpeed;
-    public float speedMultiplier = 0.5f;
-    public float deadZone = -20f;
+    public float deadZone = -133f;
 
     void Start()
     {
@@ -19,11 +18,9 @@ public class PipeMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = transform.position + (Vector3.left * groundMoveSpeed * speedMultiplier) * Time.deltaTime;
+        transform.position = transform.position + (Vector3.left * groundMoveSpeed) * Time.deltaTime;
 
-        if (transform.position.x < deadZone)
-        {
-            Debug.Log("Sky bg part deleted");
+        if (transform.position.x < deadZone) { 
             Destroy(gameObject);
         }
     }

@@ -23,7 +23,6 @@ public class SkyScrollScript : MonoBehaviour
 
         if (transform.position.x < deadZone)
         {
-            Debug.Log("Sky bg part deleted");
             Destroy(gameObject);
         }
     }
