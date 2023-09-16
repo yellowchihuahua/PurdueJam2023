@@ -6,10 +6,13 @@ public class FollowerScript : MonoBehaviour
 {
     //references
     private Rigidbody2D rb2d;
-    private LogicScript logic;
+
+    private Collider2D collider2d;
+    private Animator animator;
+    
+    public LogicScript logic;
     private GameObject player;
     private PlayerScript playerScript;
-    private Collider2D collider2d;
 
     //variables
     public float jumpStrength = 8f;
@@ -22,12 +25,19 @@ public class FollowerScript : MonoBehaviour
     void Start()
     {
         rb2d = this.GetComponent<Rigidbody2D>();
+        collider2d = this.GetComponent<Collider2D>();
+        animator = this.GetComponent<Animator>();
+        
         player = GameObject.Find("Player");
         playerScript = player.GetComponent<PlayerScript>();
         jumpStrength = playerScript.jumpStrength;
 
-        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+    }
 
+    private void OnEnable() //enable is before Start()
+    {
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
+        logic.addHeadcount(1);
     }
 
     // Update is called once per frame
@@ -36,7 +46,23 @@ public class FollowerScript : MonoBehaviour
 
         UpdateFollowerState();
 
+        UpdateAnimations();
+
         //add jump dampening in fixedupdate later or something
+    }
+
+    void UpdateAnimations()
+    {
+        animator.SetBool("_animatorIsGrounded", _isGrounded);
+
+        if (rb2d.velocity.y < -0.1f)
+        {
+            animator.SetBool("_animatorIsFalling", true);
+        }
+        else
+        {
+            animator.SetBool("_animatorIsFalling", false);
+        }
     }
 
     void UpdateFollowerState()

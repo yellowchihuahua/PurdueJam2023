@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class LogicScript : MonoBehaviour
 {
-    public int playerScore;
+    public int playerScore = 0;
     public Text scoreText;
 
-    public int currentHeadcount;
+    public int currentHeadcount = 0;
     public Text currentHeadcountText;
     public GameObject gameOverScreen;
     public float groundScrollSpeed = 5f;
@@ -17,13 +17,13 @@ public class LogicScript : MonoBehaviour
     public void addScore(int num)
     {
         playerScore = playerScore + num;
-        scoreText.text = playerScore.ToString();
+        scoreText.text = "Total score: " + playerScore.ToString();
     }
 
     public void addHeadcount(int num)
     {
         currentHeadcount = currentHeadcount + num;
-        currentHeadcountText.text = currentHeadcount.ToString();
+        currentHeadcountText.text = "Current count: " + currentHeadcount.ToString();
 
     }
     public void restartGame()
