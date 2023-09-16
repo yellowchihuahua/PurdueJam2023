@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PipeMovementScript : MonoBehaviour
+public class SkyScrollScript : MonoBehaviour
 {
     LogicScript logicScript;
 
@@ -28,4 +28,3 @@ public class PipeMovementScript : MonoBehaviour
         }
     }
 }
-

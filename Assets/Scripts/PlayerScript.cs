@@ -11,6 +11,8 @@ public class PlayerScript : MonoBehaviour
 
     //variables
     public float jumpStrength = 8f;
+    public float groundCheckRadius = 0.5f;
+    public float groundCheckDistance = 0.4f;
 
     //boolean flags
     public bool _isPlayerAlive = true;
@@ -74,12 +76,10 @@ public class PlayerScript : MonoBehaviour
     private bool CheckGrounded()
     {
         Vector2 origin = transform.position;
-        float radius = 1f;
 
-        float distance = 2f;
         LayerMask layerMask = LayerMask.GetMask("Ground");
 
-        RaycastHit2D hitRec = Physics2D.CircleCast(origin, radius, Vector2.down, distance, layerMask);
+        RaycastHit2D hitRec = Physics2D.CircleCast(origin, groundCheckRadius, Vector2.down, groundCheckDistance, layerMask);
 
         return hitRec.collider != null;
     }
