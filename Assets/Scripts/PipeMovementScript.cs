@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PipeMovementScript : MonoBehaviour
 {
-    public float moveSpeed = 5;
+    LogicScript logicScript;
+
+    private float moveSpeed;
     public float deadZone = -69;
     // Start is called before the first frame update
     void Start()
     {
-
+        logicScript = GameObject.Find("Logic Manager").GetComponent<LogicScript>();
+        moveSpeed = logicScript.groundScrollSpeed;
     }
 
     // Update is called once per frame
