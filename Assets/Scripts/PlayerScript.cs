@@ -11,6 +11,8 @@ public class PlayerScript : MonoBehaviour
 
     //variables
     public float jumpStrength = 8f;
+    public float defaultXpos = -3.5f;
+    public float returnSpeedVal = 0.5f;
     public float groundCheckRadius = 0.5f;
     public float groundCheckDistance = 0.4f;
 
@@ -23,7 +25,6 @@ public class PlayerScript : MonoBehaviour
     {
         rb2d = this.GetComponent<Rigidbody2D>();
         animator = this.GetComponent<Animator>();
-
 
         logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
@@ -60,6 +61,21 @@ public class PlayerScript : MonoBehaviour
             {
                 //jump
                 rb2d.velocity = Vector2.up * jumpStrength;
+            }
+        }
+
+        //return to correct position if pushed
+
+        LayerMask layerMask = LayerMask.GetMask("Ground");
+        if (Physics2D.Raycast(transform.position, Vector2.right, 0.5f, layerMask).collider == null)
+        {
+            if (_isPlayerAlive) //&& raycast right contains no collider
+            {
+                float step = returnSpeedVal * Time.deltaTime;
+                if (transform.position.x != defaultXpos)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, new Vector2(defaultXpos, transform.position.y), step);
+                }
             }
         }
     }

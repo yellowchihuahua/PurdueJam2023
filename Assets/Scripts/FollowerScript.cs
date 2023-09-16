@@ -16,6 +16,8 @@ public class FollowerScript : MonoBehaviour
 
     //variables
     public float jumpStrength = 8f;
+    public float defaultXpos = -5f;
+    public float returnSpeedVal = 0.5f;
     public float groundCheckRadius = 0.5f;
     public float groundCheckDistance = 0.4f;
 
@@ -51,6 +53,18 @@ public class FollowerScript : MonoBehaviour
         UpdateAnimations();
 
         //add jump dampening in fixedupdate later or something
+        LayerMask layerMask = LayerMask.GetMask("Ground");
+        if (Physics2D.Raycast(transform.position, Vector2.right, 1f, layerMask).collider == null)
+        {
+            if (_isFollowerAlive) //&& raycast right contains no collider
+            {
+                float step = returnSpeedVal * Time.deltaTime;
+                if (transform.position.x != defaultXpos)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, new Vector2(defaultXpos, transform.position.y), step);
+                }
+            }
+        }
     }
 
     void UpdateAnimations()
@@ -118,7 +132,6 @@ public class FollowerScript : MonoBehaviour
 
         RaycastHit2D hitRec = Physics2D.CircleCast(origin, groundCheckRadius, Vector2.down, groundCheckDistance, layerMask);
 
-        Debug.Log(hitRec.collider);
         return hitRec.collider != null;
     }
 }
