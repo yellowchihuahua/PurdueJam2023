@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 2092215526036184841}
   m_Layer: 0
   m_Name: Tilemap Ouchy 3
-  m_TagString: Untagged
+  m_TagString: Ouchy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -954,7 +954,7 @@ GameObject:
   - component: {fileID: 2092215526305406746}
   - component: {fileID: 2092215526305406724}
   - component: {fileID: 2092215526305406747}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tilemap Ground 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6067,6 +6067,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2092215527541319723}
   - component: {fileID: 2092215527541319722}
+  - component: {fileID: 3258822667356291261}
   m_Layer: 0
   m_Name: Chunk 3
   m_TagString: Untagged
@@ -6105,6 +6106,19 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &3258822667356291261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092215527541319721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6966efe83329d634eb5e9d3f897a0fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deadZone: -133
 --- !u!1001 &1002980300919745991
 PrefabInstance:
   m_ObjectHideFlags: 0
