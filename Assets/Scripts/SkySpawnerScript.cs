@@ -8,6 +8,7 @@ public class SkySpawnerScript : MonoBehaviour
     public GameObject skyBack;
     public GameObject skyMid;
     public GameObject skyFront;
+    public float objectLength = 24f;
     private LogicScript logic;
 
     private float backSpawnRate;
@@ -27,9 +28,9 @@ public class SkySpawnerScript : MonoBehaviour
         SpawnSky(skyMid);
         SpawnSky(skyFront);
 
-        backSpawnRate = 24/ (skyBack.GetComponent<SkyScrollScript>().speedMultiplier * logic.groundScrollSpeed);
-        midSpawnRate = 24 / (skyMid.GetComponent<SkyScrollScript>().speedMultiplier * logic.groundScrollSpeed);
-        frontSpawnRate = 24 / (skyFront.GetComponent<SkyScrollScript>().speedMultiplier * logic.groundScrollSpeed);
+        backSpawnRate = objectLength / (skyBack.GetComponent<SkyScrollScript>().speedMultiplier * logic.groundScrollSpeed);
+        midSpawnRate = objectLength / (skyMid.GetComponent<SkyScrollScript>().speedMultiplier * logic.groundScrollSpeed);
+        frontSpawnRate = objectLength / (skyFront.GetComponent<SkyScrollScript>().speedMultiplier * logic.groundScrollSpeed);
     }
 
     // Update is called once per frame

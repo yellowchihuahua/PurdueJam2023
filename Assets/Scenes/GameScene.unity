@@ -5499,6 +5499,7 @@ MonoBehaviour:
   skyBack: {fileID: 423759223549176412, guid: 1423d81f3c6d0ff44a0f2510d3c8a38b, type: 3}
   skyMid: {fileID: 8212910346793494090, guid: 92caa8ef3014c0c459400cee000c8dc8, type: 3}
   skyFront: {fileID: 5618122729202695711, guid: fdebff7b7d0fd584cac312ca09552ced, type: 3}
+  objectLength: 23.98
 --- !u!4 &500175402
 Transform:
   m_ObjectHideFlags: 0
@@ -16478,6 +16479,7 @@ MonoBehaviour:
   chunks:
   - {fileID: 8475291068863706735, guid: ee5a8aec0ad316046985876af703bf2b, type: 3}
   logic: {fileID: 0}
+  objectLength: 99.98
   spawnRate: 10
 --- !u!1 &1733294602
 GameObject:
