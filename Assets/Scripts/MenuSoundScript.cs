@@ -8,6 +8,7 @@ public class MenuSoundScript : MonoBehaviour
     //this is no longer a sound script, just to fade the intro to white and tutorial
     public GameObject fadeToWhitePanel;
     public GameObject tutorialPanel;
+    public GameObject creditsPanel;
     private bool _isTransitioning = false;
 
     private void Start()
@@ -28,6 +29,16 @@ public class MenuSoundScript : MonoBehaviour
     public void CloseTutorialPanel()
     {
         tutorialPanel.SetActive(false);
+    }
+
+    public void OpenCreditPanel()
+    {
+        creditsPanel.SetActive(true);
+    }
+
+    public void CloseCreditPanel()
+    {
+        creditsPanel.SetActive(false);
     }
 
     private void Update()
