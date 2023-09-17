@@ -5572,7 +5572,7 @@ GameObject:
   - component: {fileID: 723509725}
   - component: {fileID: 723509724}
   - component: {fileID: 723509723}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
@@ -5714,7 +5714,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723509722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.65, y: -0.78, z: 0}
+  m_LocalPosition: {x: -5.26, y: -0.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16493,8 +16493,8 @@ GameObject:
   - component: {fileID: 1539291980}
   - component: {fileID: 1539291979}
   - component: {fileID: 1539291978}
-  m_Layer: 0
-  m_Name: FollowerCow (1)
+  m_Layer: 3
+  m_Name: FollowerCow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
