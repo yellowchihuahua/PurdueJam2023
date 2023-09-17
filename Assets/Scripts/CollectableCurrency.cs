@@ -11,14 +11,14 @@ public class CollectableCurrency : MonoBehaviour
     private bool isCollected = false;
     private Animator animator;
     private LogicScript logic;
-    private AudioSource audio;
+    private AudioSource audioSource;
 
     void Start()
     {
         isCollected = false;
         animator = gameObject.GetComponentInChildren<Animator>();
         logic = GameObject.Find("Logic Manager").GetComponent<LogicScript>();
-        audio = gameObject.GetComponent<AudioSource>();
+        audioSource = gameObject.GetComponent<AudioSource>();
 
     }
 
@@ -50,7 +50,7 @@ public class CollectableCurrency : MonoBehaviour
 
     void PlayGemSound()
     {
-        audio.Play();
+        audioSource.Play();
     }
  
     private void UpdateAnimations()
