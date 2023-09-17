@@ -13,6 +13,11 @@ public class SceneManagerScript : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
+    public void LoadGameSceneWait()
+    {
+        Invoke("LoadGameScene", 1.5f);
+    }
+
     public void QuitGame()
     {
         Application.Quit();
