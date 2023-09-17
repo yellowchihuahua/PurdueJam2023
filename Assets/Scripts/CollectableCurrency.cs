@@ -16,7 +16,7 @@ public class CollectableCurrency : MonoBehaviour
     void Start()
     {
         isCollected = false;
-        animator = gameObject.GetComponent<Animator>();
+        animator = gameObject.GetComponentInChildren<Animator>();
         logic = GameObject.Find("Logic Manager").GetComponent<LogicScript>();
     }
  
@@ -49,11 +49,6 @@ public class CollectableCurrency : MonoBehaviour
     private void UpdateAnimations()
     {
         animator.SetBool("_animatorIsCollected", isCollected);
-    }
- 
-    public void DestroyAfterAnimation()
-    {
-        GameObject.Destroy(gameObject);
     }
 
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7120322261245227736}
   - component: {fileID: 1537618528546643901}
   - component: {fileID: 6025583410433380790}
-  - component: {fileID: 5277756261550022699}
+  - component: {fileID: 5247824670459830359}
   m_Layer: 7
   m_Name: Yellow Gem Renderer
   m_TagString: Untagged
@@ -106,22 +106,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!58 &5277756261550022699
-CircleCollider2D:
+--- !u!114 &5247824670459830359
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613147423639234543}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 401e2cb3ed759ff44b3848e10386faa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6579926099936851800
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6579926099936851805}
   - component: {fileID: 6579926099936851804}
+  - component: {fileID: 3447792872573061490}
   m_Layer: 7
   m_Name: Yellow Gem
   m_TagString: Untagged
@@ -168,3 +165,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountToAdd: 3
+--- !u!58 &3447792872573061490
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6579926099936851800}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

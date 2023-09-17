@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6579926099936851805}
   - component: {fileID: 6579926099936851804}
+  - component: {fileID: 3854206150308003540}
   m_Layer: 7
   m_Name: Green Gem
   m_TagString: Untagged
@@ -46,6 +47,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountToAdd: 2
+--- !u!58 &3854206150308003540
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6579926099936851800}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &6977334754282600390
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +74,7 @@ GameObject:
   - component: {fileID: 4608289106240797224}
   - component: {fileID: 8978047611633240238}
   - component: {fileID: 817074067083851376}
-  - component: {fileID: 6213056107724004829}
+  - component: {fileID: 6973377798287951869}
   m_Layer: 7
   m_Name: Green Gem Renderer
   m_TagString: Untagged
@@ -152,19 +169,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!58 &6213056107724004829
-CircleCollider2D:
+--- !u!114 &6973377798287951869
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6977334754282600390}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 401e2cb3ed759ff44b3848e10386faa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
