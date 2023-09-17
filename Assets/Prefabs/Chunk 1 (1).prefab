@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2415667429602077945}
   m_Layer: 0
   m_Name: Tilemap Ouchy 1
-  m_TagString: Untagged
+  m_TagString: Ouchy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -942,7 +942,7 @@ GameObject:
   - component: {fileID: 3172025929923006247}
   - component: {fileID: 3998546994856151437}
   - component: {fileID: 3769633051618268907}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tilemap Ground 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
