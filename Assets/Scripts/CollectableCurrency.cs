@@ -4,33 +4,35 @@ using UnityEngine;
 
 public class CollectableCurrency : MonoBehaviour
 {
- 
+
     [SerializeField] private int amountToAdd = 1;
- 
- 
+
+
     private bool isCollected = false;
     private Animator animator;
     private LogicScript logic;
- 
- 
+    private AudioSource audio;
+
     void Start()
     {
         isCollected = false;
         animator = gameObject.GetComponentInChildren<Animator>();
         logic = GameObject.Find("Logic Manager").GetComponent<LogicScript>();
+        audio = gameObject.GetComponent<AudioSource>();
+
     }
- 
+
     void OnEnable()
     {
 
     }
- 
- 
+
+
     void Update()
     {
- 
+
     }
- 
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
@@ -40,11 +42,16 @@ public class CollectableCurrency : MonoBehaviour
                 logic.addScore(amountToAdd);
                 isCollected = true;
 
+                PlayGemSound();
                 UpdateAnimations();
             }
         }
     }
 
+    void PlayGemSound()
+    {
+        audio.Play();
+    }
  
     private void UpdateAnimations()
     {
