@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class MenuSoundScript : MonoBehaviour
 {
-    //this is no longer a sound script, just to fade the intro to white
+    //this is no longer a sound script, just to fade the intro to white and tutorial
     public GameObject fadeToWhitePanel;
+    public GameObject tutorialPanel;
     private bool _isTransitioning = false;
 
     private void Start()
@@ -19,6 +20,16 @@ public class MenuSoundScript : MonoBehaviour
         _isTransitioning = true;
     }
 
+    public void OpenTutorialPanel()
+    {
+        tutorialPanel.SetActive(true);
+    }
+
+    public void CloseTutorialPanel()
+    {
+        tutorialPanel.SetActive(false);
+    }
+
     private void Update()
     {
         if (_isTransitioning)
@@ -27,6 +38,7 @@ public class MenuSoundScript : MonoBehaviour
             image.color = new Color(255, 255, 255, image.color.a + (float)(1 * Time.deltaTime));
         }
     }
+
 
 
 }
