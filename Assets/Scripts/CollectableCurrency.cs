@@ -8,7 +8,7 @@ public class CollectableCurrency : MonoBehaviour
     [SerializeField] private int amountToAdd = 1;
  
  
-    private bool isCollected;
+    private bool isCollected = false;
     private Animator animator;
     private LogicScript logic;
  

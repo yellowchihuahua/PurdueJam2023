@@ -105,7 +105,7 @@ public class FollowerScript : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ouchy")
         {
@@ -115,7 +115,7 @@ public class FollowerScript : MonoBehaviour
 
             logic.addHeadcount(-1);
 
-            Invoke("DeleteSelf", 5);
+            Invoke("DeleteSelf", 1f);
         }
     }
 
