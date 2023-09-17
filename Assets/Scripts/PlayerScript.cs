@@ -89,6 +89,7 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+
     private bool CheckGrounded()
     {
         Vector2 origin = transform.position;

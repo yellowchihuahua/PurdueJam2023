@@ -13,5 +13,5 @@ public class SceneManagerScript : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
-    
+
 }
