@@ -11,13 +11,21 @@ public class LogicScript : MonoBehaviour
 
     public int currentHeadcount = 0;
     public Text currentHeadcountText;
+
+    public int topHeadcount = 0;
     public GameObject gameOverScreen;
     public float groundScrollSpeed = 5f;
+
+    public Text gameOverTopHeadcount;
+    public Text gameOverHeadcount;
+    public Text gameOverScore;
 
     public void addScore(int num)
     {
         playerScore = playerScore + num;
-        scoreText.text = "Score: " + playerScore.ToString();
+        string text = "Score: " + playerScore.ToString();
+        scoreText.text = text;
+        gameOverScore.text = text;
     }
 
     public void addHeadcount(int num)
@@ -25,6 +33,11 @@ public class LogicScript : MonoBehaviour
         currentHeadcount = currentHeadcount + num;
         currentHeadcountText.text = "Herd: " + currentHeadcount.ToString();
 
+        if (currentHeadcount > topHeadcount)
+        {
+            topHeadcount = currentHeadcount;
+            
+        }
     }
     public void restartGame()
     {
@@ -32,6 +45,9 @@ public class LogicScript : MonoBehaviour
     }
     public void gameOVer()
     {
+        gameOverHeadcount.text = "Herd Size: " + currentHeadcount.ToString();
+        gameOverTopHeadcount.text = "Max Herd Size: " + topHeadcount.ToString();
+        gameOverScore.text = "Score: " + playerScore.ToString();
         gameOverScreen.SetActive(true);
     }
 }
