@@ -13,6 +13,10 @@ public class SceneManagerScript : MonoBehaviour
         SceneManager.LoadScene("GameScene");
     }
 
+    public void LoadMenuScene()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
     public void LoadGameSceneWait()
     {
         Invoke("LoadGameScene", 1.5f);
