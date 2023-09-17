@@ -35,6 +35,7 @@ public class FollowerScript : MonoBehaviour
         player = GameObject.Find("Player");
         playerScript = player.GetComponent<PlayerScript>();
         jumpStrength = playerScript.jumpStrength;
+        defaultXpos = playerScript.defaultXpos - Random.Range(0.3f, 2f);
 
     }
 
