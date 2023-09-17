@@ -6412,7 +6412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1054285499
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6505,7 +6505,7 @@ MonoBehaviour:
   scoreText: {fileID: 252544511}
   currentHeadcount: 0
   currentHeadcountText: {fileID: 2143084784}
-  gameOverScreen: {fileID: 1508131113}
+  gameOverScreen: {fileID: 1054285498}
   groundScrollSpeed: 3
 --- !u!4 &1158425045
 Transform:
