@@ -5629,6 +5629,7 @@ MonoBehaviour:
   returnSpeedVal: 1
   groundCheckRadius: 0.5
   groundCheckDistance: 0.4
+  fallMultiplier: 1.5
   _isPlayerAlive: 1
 --- !u!50 &723509725
 Rigidbody2D:

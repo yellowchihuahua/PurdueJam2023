@@ -20,6 +20,7 @@ public class FollowerScript : MonoBehaviour
     public float returnSpeedVal = 0.5f;
     public float groundCheckRadius = 0.5f;
     public float groundCheckDistance = 0.4f;
+    private float fallMultiplier = 2.5f;
 
     //boolean flags
     public bool _isFollowerAlive = true;
@@ -36,6 +37,7 @@ public class FollowerScript : MonoBehaviour
         playerScript = player.GetComponent<PlayerScript>();
         jumpStrength = playerScript.jumpStrength;
         defaultXpos = playerScript.defaultXpos - Random.Range(0.3f, 2f);
+        fallMultiplier = playerScript.fallMultiplier;
 
     }
 
@@ -53,18 +55,11 @@ public class FollowerScript : MonoBehaviour
 
         UpdateAnimations();
 
-        //add jump dampening in fixedupdate later or something
-        LayerMask layerMask = LayerMask.GetMask("Ground");
-        if (Physics2D.Raycast(transform.position, Vector2.right, 1f, layerMask).collider == null)
+        //jump smoothing
+        if (rb2d.velocity.y < 0)
         {
-            if (_isFollowerAlive) //&& raycast right contains no collider
-            {
-                float step = returnSpeedVal * Time.deltaTime;
-                if (transform.position.x != defaultXpos)
-                {
-                    transform.position = Vector2.MoveTowards(transform.position, new Vector2(defaultXpos, transform.position.y), step);
-                }
-            }
+            rb2d.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+
         }
     }
 
@@ -95,6 +90,18 @@ public class FollowerScript : MonoBehaviour
 
             //invoke jump after x secords
             Invoke("Jump", offset);
+        }
+        LayerMask layerMask = LayerMask.GetMask("Ground");
+        if (Physics2D.Raycast(transform.position, Vector2.right, 1f, layerMask).collider == null)
+        {
+            if (_isFollowerAlive) //&& raycast right contains no collider
+            {
+                float step = returnSpeedVal * Time.deltaTime;
+                if (transform.position.x != defaultXpos)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, new Vector2(defaultXpos, transform.position.y), step);
+                }
+            }
         }
     }
 

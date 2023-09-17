@@ -15,6 +15,7 @@ public class PlayerScript : MonoBehaviour
     public float returnSpeedVal = 0.5f;
     public float groundCheckRadius = 0.5f;
     public float groundCheckDistance = 0.4f;
+    public float fallMultiplier = 1.5f;
 
     //boolean flags
     public bool _isPlayerAlive = true;
@@ -35,7 +36,12 @@ public class PlayerScript : MonoBehaviour
         UpdatePlayerState();
 
         UpdateAnimations();
-        //add jump dampening in fixedupdate later or something
+        //jump smoothing
+        if (rb2d.velocity.y < 0)
+        {
+            rb2d.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+
+        }
     }
 
     void UpdateAnimations()
