@@ -17,13 +17,13 @@ public class LogicScript : MonoBehaviour
     public void addScore(int num)
     {
         playerScore = playerScore + num;
-        scoreText.text = "Total score: " + playerScore.ToString();
+        scoreText.text = "Score: " + playerScore.ToString();
     }
 
     public void addHeadcount(int num)
     {
         currentHeadcount = currentHeadcount + num;
-        currentHeadcountText.text = "Current count: " + currentHeadcount.ToString();
+        currentHeadcountText.text = "Herd: " + currentHeadcount.ToString();
 
     }
     public void restartGame()
